@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Vue-APOD</title>
+
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.glitch.com/360d5c3d-a2cd-473f-9fb6-f4b7ee4951b9%2F01-28_86378.ico?v=1591030816858"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div id="loader" v-if="seen"></div>
+    
+    <div id="app" v-if="seen">
+      <h3>
+        {{imgTitle}}
+      </h3>
+      <h5 @click="setToday">
+        {{imgDate}}
+      </h5>
+      <img v-bind:src="imgSrc"  v-on:click="imgClicked"  v-bind:alt="imgTitle">
+      <br>
+      {{imgExplanation}}
+      
+    </div>
+
+ 
+
+
+  </body>
+</html>
